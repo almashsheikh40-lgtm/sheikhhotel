@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sheikh Hotel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Poppins, sans-serif;
+    }
+
+    body {
+        background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1300&q=80') no-repeat center center/cover;
+        height: 100vh;
+        backdrop-filter: blur(4px);
+    }
+
+    nav {
+        background: rgba(0,0,0,0.5);
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(6px);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    nav h2 {
+        color: #fff;
+        font-size: 26px;
+        letter-spacing: 2px;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 25px;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #00d5ff;
+    }
+
+    section {
+        min-height: 100vh;
+        padding-top: 100px;
+        text-align: center;
+        display: none;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    #home {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .title {
+        color: white;
+        margin-top: 120px;
+        font-size: 45px;
+        text-shadow: 2px 2px 10px black;
+    }
+
+    .glass-box {
+        width: 350px;
+        margin: auto;
+        margin-top: 40px;
+        padding: 25px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 15px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.4);
+        color: white;
+        box-shadow: 0 0 20px rgba(0,0,0,0.3);
+        animation: fadeIn 1.2s;
+    }
+
+    input {
+        width: 90%;
+        padding: 12px;
+        margin-top: 12px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+    }
+
+    button {
+        margin-top: 18px;
+        width: 90%;
+        padding: 12px;
+        border: none;
+        background: #00d5ff;
+        border-radius: 8px;
+        font-size: 17px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    button:hover {
+        background: #00a1c0;
+    }
+
+    .gallery img, .rooms img {
+        width: 300px;
+        height: 200px;
+        margin: 12px;
+        border-radius: 12px;
+        transition: 0.3s;
+    }
+
+    .gallery img:hover, .rooms img:hover {
+        transform: scale(1.08);
+        box-shadow: 0 0 20px black;
+    }
+
+</style>
+
+<script>
+function showPage(id) {
+    document.querySelectorAll("section").forEach(sec => sec.style.display = "none");
+    document.getElementById(id).style.display = "block";
+}
+</script>
+
+</head>
+<body>
+
+<nav>
+    <h2>Sheikh Hotel</h2>
+    <ul>
+        <li><a href="#" onclick="showPage('home')">Home</a></li>
+        <li><a href="#" onclick="showPage('login')">Login</a></li>
+        <li><a href="#" onclick="showPage('rooms')">Rooms</a></li>
+        <li><a href="#" onclick="showPage('about')">About Us</a></li>
+        <li><a href="#" onclick="showPage('gallery')">Gallery</a></li>
+    </ul>
+</nav>
+
+<!-- HOME PAGE -->
+<section id="home">
+    <h1 class="title">Welcome to Sheikh Hotel</h1>
+    <p style="color:white; margin-top: 20px; font-size:20px;">
+        Nagpur Road, Chandrapur | Call: 9699947748
+    </p>
+</section>
+
+<!-- LOGIN PAGE -->
+<section id="login">
+    <h1 class="title">Login</h1>
+    <div class="glass-box">
+        <input type="text" placeholder="Enter Username">
+        <input type="password" placeholder="Enter Password">
+        <button>Login</button>
+    </div>
+</section>
+
+<!-- ROOMS PAGE -->
+<section id="rooms" class="rooms">
+    <h1 class="title">Our Rooms</h1>
+    <p style="color:white; font-size:20px; margin-top:20px;">
+        Luxury Rooms | AC Rooms | Family Rooms | Deluxe Rooms
+    </p>
+    <div style="margin-top:30px;">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Room 1">
+        <img src="https://images.unsplash.com/photo-1560448075-bb485b067938?auto=format&fit=crop&w=800&q=80" alt="Room 2">
+        <img src="https://images.unsplash.com/photo-1576671085875-d76d7b48ef9b?auto=format&fit=crop&w=800&q=80" alt="Room 3">
+    </div>
+</section>
+
+<!-- ABOUT PAGE -->
+<section id="about">
+    <h1 class="title">About Us</h1>
+    <p style="color:white; margin-top:30px; width:80%; margin:auto; font-size:20px;">
+        Sheikh Hotel, located at Nagpur Road Chandrapur, offers premium hospitality, 
+        luxury rooms, and the best stay experience. Call: 9699947748
+    </p>
+</section>
+
+<!-- GALLERY PAGE -->
+<section id="gallery" class="gallery">
+    <h1 class="title">Gallery</h1><br>
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Gallery 1">
+    <img src="https://images.unsplash.com/photo-1501117716987-c8e1ecb21000?auto=format&fit=crop&w=800&q=80" alt="Gallery 2">
+    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80" alt="Gallery 3">
+</section>
+
+</body>
+</html>
